@@ -1,0 +1,12 @@
+#id14 pre.literal-block {
+  font-family: "MS PGothic";
+  font-size: 12pt;
+  line-height: 1.0;
+  white-space: pre;
+}
+
+.presentation .incremental,
+.presentation .incremental *,
+.presentation .incremental *:after {
+  visibility: hidden;
+}

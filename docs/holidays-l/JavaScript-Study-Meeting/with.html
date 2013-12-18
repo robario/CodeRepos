@@ -1,0 +1,81 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="ja">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <title></title>
+  </head>
+  <body>
+    <h1>よくある間違い</h1>
+    <script type="text/javascript">
+(function() {
+    var data = [1,2,3,4,5,6,7,8,9];
+    for (var i = 0; i < 3; ++i) {
+        var p = document.createElement('p');
+        p.appendChild( document.createTextNode('data[' + i + ']') );
+        p.onclick = function() {
+            alert(data[i]);
+        };
+        document.body.appendChild(p);
+    }
+})();
+    </script>
+
+    <hr>
+
+    <script type="text/javascript">
+(function() {
+    var data = [1,2,3,4,5,6,7,8,9];
+    for (var i = 0; i < 3; ++i) {
+        var p = document.createElement('p');
+        p.appendChild( document.createTextNode('datum = data[' + i + ']') );
+        var datum = data[i];
+        p.onclick = function() {
+            alert(datum);
+        };
+        document.body.appendChild(p);
+    }
+})();
+    </script>
+
+    <hr>
+
+    <script type="text/javascript">
+(function() {
+    var data = [1,2,3,4,5,6,7,8,9];
+    for (var i = 0; i < 3; ++i) {
+        var p = document.createElement('p');
+        p.appendChild( document.createTextNode('(function(){datum=data[' + i + ']})()') );
+        (function() {
+            var datum = data[i];
+            p.onclick = function() {
+                alert(datum);
+            };
+        })();
+        document.body.appendChild(p);
+    }
+})();
+    </script>
+
+    <hr>
+
+    <script type="text/javascript">
+(function() {
+    var data = [1,2,3,4,5,6,7,8,9];
+    for (var i = 0; i < 3; ++i) {
+        var p = document.createElement('p');
+        p.appendChild( document.createTextNode('with({datum:data[' + i + ']})') );
+        with({'datum':data[i]}) {
+            p.onclick = function() {
+                alert(datum);
+            };
+        }
+        document.body.appendChild(p);
+    }
+})();
+    </script>
+
+    <script type="text/javascript" src="JavaScript-Study-Meeting.js"></script>
+  </body>
+</html>

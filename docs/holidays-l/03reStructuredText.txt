@@ -1,0 +1,451 @@
+.. -*- mode: RST -*-
+.. RST2S5FLAGS=--theme-url=ui/scala_gfx
+
+===============
+第3回社内勉強会
+===============
+
+----------------------
+reStructuredText勉強会
+----------------------
+
+これは何？
+==========
+
+- テキストドキュメントの文書フォーマットの一つ
+
+- こんな感じ
+
+  - `ソース <03reStructuredText.txt>`_
+
+何が嬉しいの？
+==============
+
+- ツールを使って変換できる
+
+  - rst2html
+
+    - そのままウェブページとして公開
+    - スタイルシートを予め用意しておけば楽チン
+
+  - rst2s5
+
+    - プレゼンができます → `デモ <03reStructuredText.x.html>`_
+    - S5の話は後ほど
+
+  - rst2latex
+
+    - 論文っぽくできる
+    - 印刷の時にいいかも
+
+  - rst2xml
+
+    - プログラムとかXSLT作って自由に変換
+
+- ソースはただ一つ！
+
+  - Don't Repeat Yourself!! D・R・Y!! D・R・Y!!（違
+
+- **[これはすごい]**
+
+他には何が嬉しいの？
+====================
+
+- ソースが **読める**
+
+  - メールにそのまま貼れちゃう
+  - reStructuredText形式で書かれていたことに
+    気付かなかったこともあるほど
+
+- **[これはすごい]**
+
+ちょっと技術寄りの話
+====================
+
+- 構造化テキスト
+- マークアップ言語
+
+  - テキストに構造を与える
+  - テキストに意味付けを行う
+
+- Pythonの公式文書フォーマット
+
+  - 先のツール群はPython製の `Docutils(Documentation Utilities) <http://docutils.sourceforge.net/>`_ に含まれている
+
+- 外観は他の「ほとんどプレーンテキストなフォーマット」に似ている
+
+  - Wiki類
+  - はてな記法
+
+- セマンティクスはXMLに似ている
+
+何が違う？
+==========
+
+- HTML
+
+  - 手で書くのはちょっと大変
+
+- XML
+
+  - 人間が手で書くもんじゃない
+
+    - 当初の「XMLはHuman Readableだ」って話は絶対嘘だと思う
+    - XMLで書かれた設定ファイルとか読みたくないし
+
+  - マークアップのルールどうする？
+
+- YAML
+
+  - 書くのは比較的楽
+  - マークアップのルールどうする？
+  - シンプル過ぎて細かいマークアップが大変
+
+何が違う？
+==========
+
+- DocBook
+
+  - XMLベース
+  - 書くのが **超本気で** しんどい！
+
+    - HTMLで足りないと思う要素全部作っちゃいました♪みたいなノリ
+    - XHTML1.1より酷いぉ(^ω^;)
+
+- TeX,LaTeX
+
+  - 書くの難しい
+  - マクロで拡張
+
+    - 先輩から受け継ぐ伝統のマクロ
+    - マクロの嵐
+    - ソース汚い
+
+文書構造
+========
+
+::
+
+  ============
+  文書タイトル
+  ============
+
+  ----------------
+  文書サブタイトル
+  ----------------
+
+  第1章
+  =====
+
+  第1節
+  -----
+
+
+``= - ` : ' " ~ ^ _ * + # < >`` どれ使ってもいい
+
+段落
+====
+::
+
+  段落
+
+    引用段落
+
+  段落
+
+段落
+
+  引用段落
+
+段落
+
+- 空行大事
+- インデント大事
+
+句要素
+======
+
++--------------------+----------------+---------+
+|reStructuredText    |HTML            |HTML要素 |
++====================+================+=========+
+|\*強調\*            |*強調*          |em       |
++--------------------+----------------+---------+
+|\*\*より強い強調\*\*|**より強い強調**|strong   |
++--------------------+----------------+---------+
+
+- 他にもあるけどあんま使わないので省略
+
+リスト - 順不同リスト
+=====================
+
+::
+
+  - 項目1
+  - 項目2
+
+    - 項目2-1
+    - 項目2-2
+
+  - 項目3
+
+- 項目1
+- 項目2
+
+  - 項目2-1
+  - 項目2-2
+
+- 項目3
+
+``+ *`` なども使える
+
+リスト - 序列リスト
+===================
+
+::
+
+  1. 項目1
+
+     a. 項目1-a
+     b. 項目1-b
+
+  2. 項目2
+
+1. 項目1
+
+   a. 項目1-a
+   b. 項目1-b
+
+2. 項目2
+
+``A.  I.  i.  (1)  1)`` なども使える
+
+リスト - 定義リスト
+===================
+::
+
+  定義名1
+    定義1の内容
+
+  定義名2
+    定義2の内容
+
+定義名1
+  定義1の内容
+
+定義名2
+  定義2の内容
+
+整形済みブロック
+================
+::
+
+  ::
+
+    - *整形* **済み**
+
+::
+
+  - *整形* **済み**
+
+表
+==
+::
+
+  +--+--+--+
+  |a |b |c |
+  +==+==+==+
+  |1 |2 |v |
+  +--+--+  +
+  |>  < |^ |
+  +--+--+--+
+
++--+--+--+
+|a |b |c |
++==+==+==+
+|1 |2 |v |
++--+--+  +
+|>  < |^ |
++--+--+--+
+
+シンプルな表
+============
+::
+
+  == == ==
+  a  b  c
+  == == ==
+  1  2  v
+  >  <  ^
+  ===== ==
+
+== == ==
+a  b  c
+== == ==
+1  2  v
+>  <  ^
+===== ==
+
+- シンプル
+- 縦につなげることができない
+
+リンク
+======
+::
+
+  `Example Web Page <http://example.com>`_
+
+`Example Web Page <http://example.com>`_
+
+画像
+====
+
+::
+
+  .. image:: ui/scala_gfx/audio_on.png
+
+.. image:: ui/scala_gfx/audio_on.png
+
+- ``.. ○○::`` ← ディレクティブ
+- 拡張も可能
+
+その他
+======
+
+罫線
+  ``----``
+
+脚注
+  ``[1]_``
+
+自動採番脚注
+  ``[#]_``
+  ``[*]_``
+
+コメント
+  ::
+
+    .. コメント
+       ここもコメント
+
+エスケープ
+  \\\*強調じゃない\\\*
+
+S5
+==
+
+- **S** imple **S** tandards-based **S** lide **S** how **S** ystem
+- 特殊なidやclassを付加した1枚のHTMLがあれば
+  スライド式のプレゼンテーションができる
+
+  - 資料をそのままウェブで公開できる
+  - 見る方は特殊なプラグイン・ソフトウェアが不要（ブラウザさえあれば見れる）
+
+- Q.他にも似たようなツールはいっぱいあるけど何故S5？
+
+  - A.reStructuredTextから簡単に生成できるから
+
+S5 Reloaded
+===========
+
+- このプレゼンは `S5 Reloaded 1.3b7` を使用してます
+- モダンブラウザに対応
+
+  - 対応ブラウザ
+
+    - SeaMonkey
+    - Mozilla
+    - Firefox
+    - Netscape
+    - K-Meleon
+    - Epiphany
+    - Camino
+    - Safari
+    - Shiira
+    - Konqueror
+    - Opera 9
+
+  - つまり、IE **以外** （笑）
+  - IEは対応作業中らしい
+
+S5(S5 Reloaded)の使い方
+=======================
+
+- uiフォルダを直下にコピー
+- rst2s5でS5ファイルを作る
+
+  - ``--theme-url=テーマ`` でテーマを指定できる
+  - テーマ自作も可能
+
+- テーマ切り替えデモ
+
+注意
+----
+
+- S5 Reloaded は application/xhtml+xml では動かない（＞＜）のでtext/htmlで。
+
+  - 拡張子を.xhtmlではなく.x.htmlにしてます
+
+3分で作る即興プレゼンアプリ
+===========================
+
+- `3分で作る即興プレゼンアプリ <http://localhost:3000/>`_
+
+  - Catalyst
+     ソース::
+
+       sub rst2s5 : Local {
+           my ( $self, $c ) = @_;
+           use IO::All;
+           $c->req->param('rst') > io('/tmp/rst');
+           my $s5 = `rst2s5.py /tmp/rst`;
+           $c->res->body($s5);
+       }
+
+終わりに
+========
+ご清聴ありがとうございました。
+
+- リンク集
+
+  - `reStructuredText <http://docutils.sourceforge.net/rst.html>`_
+  - `S5: A Simple Standards-Based Slide Show System <http://meyerweb.com/eric/tools/s5/>`_
+  - `S5 Reloaded . Enhanced version of the browser-based presentation slideshow system <http://www.netzgesta.de/S5/>`_
+
+.. raw:: html
+
+   <script type="text/javascript">
+   var head = document.getElementsByTagName('head')[0];
+   var configuration = {tranSitions:true,
+                        fadeDuration:500,
+                        incrDuration:250,
+                        autoMatic:false,
+                        playLoop:true,
+                        playDelay:10,
+                        audioSupport:true,
+                        audioVolume:100,
+                        audioError:true,
+                        audioDebug:false};
+   for (var name in configuration) {
+       var meta = document.createElement('meta');
+       meta.setAttribute('name', name);
+       meta.setAttribute('content', configuration[name]);
+       head.appendChild(meta);
+   }
+
+   var e=document.getElementsByTagName('ul');
+   for (var i = 0; i < e.length; ++i) {
+      e[i].className += ' incremental';
+      // e[i].className += ' scale fs90';
+   }
+
+   try {
+       var style = document.createElement('style');
+       style.innerHTML = ['* {font-family: "MS PGothic",sans-serif}'
+                         ,'pre,tt {font-family: "MS Gothic",monospace}'
+                         ,'.slide pre {color:black}'
+                         ,'.slide tt {color:black}'
+                         ,'.slide .incremental, .slide .incremental *, .slide .incremental *:after {visibility: hidden;}'
+                         ].join('\n');
+       head.appendChild(style);
+   } catch(e) {}
+   </script>

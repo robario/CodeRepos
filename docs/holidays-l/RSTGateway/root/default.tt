@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript" />
+    <title>RSTGateway</title>
+  </head>
+  <body>
+    <h1>3分で作る即興プレゼンアプリ<img src="btn_88x31_powered.png" /></h1>
+    <form action="rst2s5" method="post" enctype="application/x-www-form-urlencoded">
+      <p>
+        <textarea name="rst" rows="25" cols="80">
+===========================
+3分で作る即興プレゼンアプリ
+===========================
+
+----------
+Catalyst編
+----------
+
+ソース
+======
+
+::
+
+  sub rst2s5 : Local {
+      my ( $self, $c ) = @_;
+      use IO::All;
+      $c-&gt;req-&gt;param('rst') &gt; io('/tmp/rst');
+      my $s5 = `rst2s5.py /tmp/rst`;
+      $c-&gt;res-&gt;body($s5);
+  }
+
+適当杉
+        </textarea><br /><input type="submit" value="プレゼンにな〜れ！" />
+      </p>
+    </form>
+  </body>
+</html>
