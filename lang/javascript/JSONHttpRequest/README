@@ -1,0 +1,39 @@
+NAME
+    JSONHttpRequest - Extend JSONScriptRequest to look like XMLHttpRequest
+    more.
+
+SYNOPSIS
+      var req = new JSONHttpRequest();
+      req.open('GET', 'http://www.example.com/jsonp');
+      req.onreadystatechange = function() {
+          if (req.readyState == 4 && req.readyState == 201) {
+              alert(req.responseJSON);
+          }
+      };
+      req.send(null);
+
+DESCRIPTION
+    JSONHttpRequest is more similar to XMLHttpRequest than
+    JSONScriptRequest. It can treat the request headers, the response
+    status, and the response headers. However, you have to enhance the
+    server side to follow to it.
+
+  Constructor
+   JSONHttpRequest({...})
+    The same argument as JSONScriptRequest can be specified.
+
+TODO
+    Implement the features that is not implemented yet.
+
+SEE ALSO
+    JSONScriptRequest
+
+AUTHOR
+    Hironori Yoshida <yoshida@cpan.org>
+
+COPYRIGHT
+      Copyright (c) 2006, Hironori Yoshida <yoshida@cpan.org>. All rights reserved.
+      This module is free software; you can redistribute it and/or modify it
+      under the terms of the Artistic license. Or whatever license I choose,
+      which I will do instead of keeping this documentation like it is.
+

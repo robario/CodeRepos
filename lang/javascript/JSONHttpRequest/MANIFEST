@@ -1,0 +1,15 @@
+Build.PL
+Changes
+lib/JSONHttpRequest.js
+MANIFEST			This list of files
+META.yml
+README
+tests/index.html
+tests/lib/JSAN.js
+tests/lib/Test/Builder.js
+tests/lib/Test/Harness.js
+tests/lib/Test/Harness/Browser.js
+tests/lib/Test/Harness/Director.js
+tests/lib/Test/More.js
+tests/lib/Test/Simple.js
+tests/use.html
