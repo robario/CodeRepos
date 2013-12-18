@@ -1,0 +1,3 @@
+steps = CommitMessageWrap, FindVersion, ChangeVersion, CheckChangeLog, DistTest, Commit, Tag, MakeDist, UploadCPAN
+svn.tagpattern = http://svn.coderepos.org/share/lang/perl/Catalyst-Engine-FastCGI-Lighttpd/tags/Catalyst-Engine-FastCGI-Lighttpd-%v
+commit_message.format = lang/perl/Catalyst-Engine-FastCGI-Lighttpd: %msg
