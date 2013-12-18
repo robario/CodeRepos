@@ -1,0 +1,26 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <script type="text/javascript" src="lib/JSAN.js"></script>
+  </head>
+  <body>
+    <pre id="test">
+      <script type="text/javascript">
+// <![CDATA[
+JSAN.addRepository('lib', '../lib');
+JSAN.errorLevel = 'die';
+JSAN.use("Test.More");
+
+plan({ tests: 1 });
+
+JSAN.use('console');
+
+isnt( typeof console, 'undefined', 'console is defined' );
+
+// ]]>
+      </script>
+    </pre>
+  </body>
+</html>

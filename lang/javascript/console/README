@@ -1,0 +1,28 @@
+NAME
+    console - define console object when there is no FireBug.
+
+SYNOPSIS
+      JSAN.use('console');
+      
+  or
+      
+  <script type="text/javascript" src="console.js"></script>
+
+DESCRIPTION
+  Class Properties
+  Constructor
+TODO
+    None.
+
+SEE ALSO
+    FireBug <http://www.joehewitt.com/software/firebug/>
+
+AUTHOR
+    Hironori Yoshida <yoshida@cpan.org>
+
+COPYRIGHT
+      Copyright (c) 2006, Hironori Yoshida <yoshida@cpan.org>. All rights reserved.
+      This module is free software; you can redistribute it and/or modify it
+      under the terms of the Artistic license. Or whatever license I choose,
+      which I will do instead of keeping this documentation like it is.
+
