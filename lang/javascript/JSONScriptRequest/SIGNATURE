@@ -1,0 +1,42 @@
+This file contains message digests of all files listed in MANIFEST,
+signed via the Module::Signature module, version 0.55.
+
+To verify the content in this distribution, first make sure you have
+Module::Signature installed, then type:
+
+    % cpansign -v
+
+It will check each file's integrity, as well as the signature's
+validity.  If "==> Signature verified OK! <==" is not displayed,
+the distribution may already have been compromised, and you should
+not run its Makefile.PL or Build.PL.
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+SHA1 6fcc9a6b36ec0b0fe5ac92b4a1db7baef69d060c Build.PL
+SHA1 2f98a39eb9ec090bf6ce6b4e76eb21cceeac6c7a Changes
+SHA1 e0804b84e0db0a452683f142bea6bb972c398926 MANIFEST
+SHA1 24f753e366c9509c832666aa46332eacd1411884 META.json
+SHA1 5c7a9dbf52ed3e823908f8bdae1428ec46ae7d56 doc/html/JSONScriptRequest.html
+SHA1 957cc45216bd273633b525af8f50208ff1ca3460 doc/pod/JSONScriptRequest.pod
+SHA1 47f2c33b12a4b698b0e01adc61c89ed9bd4a3fe8 doc/text/JSONScriptRequest.txt
+SHA1 f6853e15641b6d942185617a3d32eefddf00f1b0 lib/JSONScriptRequest.js
+SHA1 88866a3ca1fab94846b18304adba2efd7fa81a5f tests/index.html
+SHA1 64f1c2359b86068acb24364a1a9ae9da4f0c805e tests/lib/JSAN.js
+SHA1 56228faad95687de5127d30a7f202c2ef8b2e6e0 tests/lib/Subclass.js
+SHA1 cfa81d67f408ad53647ec833cc3d20a67b17cef5 tests/lib/Test/Base.js
+SHA1 2dfbc09a0bcb8a0aaa278f76e5f68a0efb7d5ead tests/lib/Test/Builder.js
+SHA1 7e163479b1f893b5d2713db5c0fc8ced9d66a000 tests/lib/Test/Harness.js
+SHA1 5c58ec52f2309f439dfdf738b554e1bc4074fbed tests/lib/Test/Harness/Browser.js
+SHA1 40be6d8de1e6e685a3a660250a6dbb3a25676d4c tests/lib/Test/Harness/Director.js
+SHA1 2542defed8dab1e65ffd94208df8caf0ab51f7d7 tests/lib/Test/More.js
+SHA1 88dc12d5e27a2df7e2f295ed3a062a8ef119f97e tests/lib/Test/Simple.js
+SHA1 11c41c016fff0222c489ee95b7f29da2d8aa675b tests/use.html
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.5 (Cygwin)
+
+iD8DBQFFkIRpVuN5Ai6pg54RAjmBAJ9OdErDPsTew37h2TvI04846U2cmQCfbAOq
+Y/Y8Chb0pE+mWRuIVCRX6hc=
+=CjwL
+-----END PGP SIGNATURE-----

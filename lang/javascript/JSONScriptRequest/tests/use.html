@@ -1,0 +1,37 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <title>JSONScriptRequest test use</title>
+    <script type="text/javascript" src="lib/JSAN.js"></script>
+    <style type="text/css">span{display:block}</style>
+  </head>
+  <body>
+    <pre><script type="text/javascript"><!--
+JSAN.addRepository('../lib');
+JSAN.errorLevel = 'die';
+JSAN.use('Test.More');
+
+plan({ tests: 2 });
+
+JSAN.use('JSONScriptRequest');
+
+isnt(typeof JSONScriptRequest, 'undefined', 'JSONScriptRequest is defined');
+canOK('JSONScriptRequest'
+      ,'addEventListener'
+      ,'removeEventListener'
+      ,'dispatchEvent'
+      ,'addEventListenerNS'
+      ,'removeEventListenerNS'
+      ,'open'
+      ,'setRequestHeader'
+      ,'send'
+      ,'abort'
+      ,'getAllResponseHeaders'
+      ,'getResponseHeader'
+      );
+// -->
+    </script></pre>
+  </body>
+</html>

@@ -1,0 +1,20 @@
+Build.PL
+Changes
+doc/html/JSONScriptRequest.html
+doc/pod/JSONScriptRequest.pod
+doc/text/JSONScriptRequest.txt
+lib/JSONScriptRequest.js
+MANIFEST			This list of files
+META.json
+SIGNATURE			Added here by Module::Build
+tests/index.html
+tests/lib/JSAN.js
+tests/lib/Subclass.js
+tests/lib/Test/Base.js
+tests/lib/Test/Builder.js
+tests/lib/Test/Harness.js
+tests/lib/Test/Harness/Browser.js
+tests/lib/Test/Harness/Director.js
+tests/lib/Test/More.js
+tests/lib/Test/Simple.js
+tests/use.html

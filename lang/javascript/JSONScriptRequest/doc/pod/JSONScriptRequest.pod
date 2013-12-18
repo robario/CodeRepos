@@ -1,0 +1,71 @@
+=head1 NAME
+
+JSONScriptRequest - Call the JSONP API like XMLHttpRequest
+
+=head1 SYNOPSIS
+
+  var req = new JSONScriptRequest();
+  req.open('GET', 'http://www.example.com/jsonp');
+  req.onreadystatechange = function() {
+      if (req.readyState == 4) {
+          alert(req.responseJSON);
+      }
+  };
+  req.send(null);
+
+=head1 DESCRIPTION
+
+JSONScriptRequest calls JSON API by using the SCRIPT element.
+It enables the cross-site request.
+
+Its usage looks like XMLHttpRequest.
+See the document of XMLHttpRequest for details.
+
+=head2 Class Properties
+
+=head3 responseJSON
+
+  var json = req.responseJSON;
+
+This attributes represents the response as a JSON object. NULL if the request is unsuccessful or has not yet been sent.
+
+=head2 Constructor
+
+=head3 JSONScriptRequest({...})
+
+The following values can be specified for the argument.
+
+=over
+
+=item callback_param
+
+The name of the callback parameter key. Default is 'callback'.
+
+=back
+
+=head1 TODO
+
+=over
+
+=item Implement the features that is not implemented yet.
+
+=back
+
+=head1 SEE ALSO
+
+The XMLHttpRequest Object
+L<http://www.w3.org/TR/XMLHttpRequest/>
+
+=head1 AUTHOR
+
+Hironori Yoshida <yoshida@cpan.org>
+
+=head1 COPYRIGHT
+
+  Copyright (c) 2006, Hironori Yoshida <yoshida@cpan.org>. All rights reserved.
+  This module is free software; you can redistribute it and/or modify it
+  under the terms of the Artistic license. Or whatever license I choose,
+  which I will do instead of keeping this documentation like it is.
+
+
+=cut
